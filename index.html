@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Practice</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row vh-100 bg-dark">
+            <div class="col-3 bg-warning" id="inputPanel">
+                <div class="row">
+                    <h2 class="text-white ps-4 mt-4">Your Library</h2>
+                    <div class="mt-4" id="inputSection">
+                        <form class="my-5">
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control bg-dark text-white" id="bookTitle" aria-describedby="bookTitle" placeholder="Input Titles">
+                                <label for="bookTitle" class="form-label text-white bg-transparent">Book Title</label>
+                            </div>
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control bg-dark text-white" id="authorName" aria-describedby="authorName" placeholder="Input Author">
+                                <label for="authorName" class="form-label text-white">Author Name</label>
+                            </div>
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control bg-dark text-white" id="pageNumber" aria-describedby="pageNumber" placeholder="Input Pages">
+                                <label for="pageNumber" class="form-label text-white">Pages</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input bg-dark" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">Have you read this book?</label>
+                            </div>
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-dark">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9 bg-dark" id="library">
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+   <script src="main.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
