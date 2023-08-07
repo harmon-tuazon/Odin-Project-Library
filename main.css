@@ -2,4 +2,3 @@
 .form-floating>.form-control:not(:placeholder-shown)~label::after{
     background-color: transparent !important;
 }
-
