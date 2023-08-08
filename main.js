@@ -66,14 +66,14 @@ function renderCardlibrary() {
 
     btnGroup.classList.add('card-text', 'd-flex', 'justify-content-center','gap-1', 
     'btn-group', 'btn-group-sm');
-    deleteBtn.classList.add('btn','btn-dark');
+    deleteBtn.classList.add('btn','btn-dark', 'deleteBookcard');
     readBtn.classList.add('btn','btn-warning');
    
     title.textContent = `${book.title}`;
     author.textContent = `Author: ${book.author}`;
     pages.textContent = `Page Number: ${book.pages}`;
-    read.textContent = `Read: ${book.read}`
-    deleteBtn.textContent = 'Remove';
+    read.textContent = `Have I read this book: ${book.read}`
+    deleteBtn.textContent = 'Delete';
     readBtn.textContent = `Read`
 
     cardBody.appendChild(author);
@@ -101,20 +101,28 @@ function renderTablelibrary() {
   let authorHeader = document.createElement('th');
   let pageHeader = document.createElement('th');
   let readHeader = document.createElement('th');
+  let removeHeader = document.createElement('th');
+  let toggleHeader = document.createElement('th');
 
-  table.classList.add('table', 'text-light', 'text-center');
-  tableRowheader.classList.add('table-warning');
+  table.classList.add('table', 'text-light', 'text-center', 'table-border', 
+ 'border-warning', 'table-responsive', 'mt-5');
+  tableRowheader.classList.add('text-bg-warning');
 
   titleHeader.textContent = `Title`;
   authorHeader.textContent = `Author`;
   pageHeader.textContent = `Page Number`;
-  readHeader.textContent = `Read`
+  readHeader.textContent = `Have you read this book?`
+  removeHeader.textContent = `Remove`
+  toggleHeader.textContent = 'Toggle Read'
 
   tableHead.appendChild(tableRowheader);
   tableRowheader.appendChild(titleHeader);
   tableRowheader.appendChild(authorHeader);
   tableRowheader.appendChild(pageHeader);
   tableRowheader.appendChild(readHeader);
+  tableRowheader.appendChild(toggleHeader);
+  tableRowheader.appendChild(removeHeader);
+
 
   table.appendChild(tableHead);
 
@@ -127,17 +135,32 @@ function renderTablelibrary() {
     let tableBodyauthor = document.createElement('td');
     let tableBodypage = document.createElement('td');
     let tableBodyread = document.createElement('td');
+    let tableBodyremove = document.createElement('td');
+    let removeBtn = document.createElement('button');
+    let tableBodytoggle = document.createElement('td');
+    let toggleBtn = document.createElement('button');
+
+    removeBtn.classList.add('btn','btn-dark','btn-sm');
+    toggleBtn.classList.add('btn','btn-warning','btn-sm');
+    tableBody.classList.add('align-middle', 'text-bg-secondary')
 
     tableBodytitle.textContent = `${book.title}`;
     tableBodyauthor.textContent = `${book.author}`;
     tableBodypage.textContent = `${book.pages}`;
     tableBodyread.textContent = `${book.read}`
+    removeBtn.textContent = 'Delete'
+    toggleBtn.textContent = 'Read'
 
     tableBody.appendChild(tableBodyrow);
     tableBodyrow.appendChild(tableBodytitle);
     tableBodyrow.appendChild(tableBodyauthor);
     tableBodyrow.appendChild(tableBodypage);
     tableBodyrow.appendChild(tableBodyread);
+    tableBodyrow.appendChild(tableBodytoggle);
+    tableBodytoggle.appendChild(toggleBtn);
+    tableBodyremove.appendChild(removeBtn);
+    tableBodyrow.appendChild(tableBodyremove);
+    
 
     table.appendChild(tableBody)
   }  library.appendChild(table);
@@ -158,6 +181,13 @@ function updateBtnlook() {
   } 
 };
 
+const deleteBtnarray = document.querySelectorAll('.deleteBookcard')
+
+function removeBookcard() {
+  console.log(deleteBtnarray)
+}
+
 addBookbtn.addEventListener('click', addBookToLibrary);
 cardViewbtn.addEventListener('click', renderCardlibrary);
 tableViewbtn.addEventListener('click', renderTablelibrary);
+deleteBtnarray.forEach(btn => btn.addEventListener('click', removeBookcard));
