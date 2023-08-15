@@ -42,18 +42,59 @@
                 </div>
             </div>
             <div class="col-9 bg-dark container-fluid" id="main-section">
-                <div class="row border-bottom d-flex justify-content-between align-items-center py-2 my-2">
-                    <div class="col-3">
-                        <h2 class="text-white ps-4">Your Library</h2>
+                <div class="col-3 my-3 border-bottom w-100">
+                    <h2 class="text-white ps-4">Your Library</h2>
+                </div>
+                <div class="row d-flex justify-content-between align-items-center py-2">
+                    <div class="col-2 btn-group-sm">
+                        <button class="btn btn-outline-light btn-md"  data-bs-toggle="collapse" data-bs-target="#sortOptions" 
+                        aria-expanded="false" id="sortBtn">Sort</button>
+                        <button class="btn btn-outline-light btn-md" disabled id="filterBtn">Filter</button>
                     </div>
                     <div class="col-2 btn-group">
                         <button class="btn btn-outline-light" id="tableView">Table</button>
                         <button class="btn btn-light" id="cardView">Card</button>
                     </div>
                 </div>
-                <div class="row justify-content-evenly"  id="library">
-
+                <div>
+                    <div class="collapse m-0" id="sortOptions">
+                      <div class="card card-body text-bg-light" style="min-width: 120px;">
+                        <button class="btn btn-sm btn-light sortBtn"  id="sortAscend">Sort A to Z</button>
+                        <button class="btn btn-sm btn-light sortBtn"  id="sortDescend">Sort Z to A</button>
+                        <button class="btn btn-sm btn-light sortBtn"  id="sortStatus">Sort by Status</button>
+                        <button class="btn btn-sm btn-light sortBtn"  id="sortPage">Sort by Page</button>
+                      </div>
+                    </div>
                 </div>
+                <div id= "myModal" class = "myModal rounded"> 
+                    <div class="modal-dialog">
+                        <div class="modal-content p-2 bg-dark rounded">
+                            <div class="modal-header mb-3 w-100 border-bottom pb-2">
+                                <h4 class="modal-title text-white">Edit Book Information</h4>
+                            </div>
+                            <div class="modal-body mb-4 border-bottom">
+                                <div class="mb-2 form-floating">
+                                    <input type="text" class="form-control bg-dark text-white" id="editTitle" aria-describedby="bookTitle" placeholder="Input Titles">
+                                    <label for="editTitle" class="form-label text-white bg-transparent">Book Title</label>
+                                </div>
+                                <div class="mb-2 form-floating">
+                                    <input type="text" class="form-control bg-dark text-white" id="editName" aria-describedby="authorName" placeholder="Input Author">
+                                    <label for="editName" class="form-label text-white">Author Name</label>
+                                </div>
+                                <div class="mb-3 form-floating">
+                                    <input type="number" class="form-control bg-dark text-white" id="editPage" aria-describedby="pageNumber" placeholder="Input Pages" min ="1">
+                                    <label for="editPage" class="form-label text-white">Pages</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer mb-1 align-self-center btn-group-sm">
+                                <button class="btn btn-success" id="saveChangesBtn" type="button">Save Changes </button>
+                                <button class="btn btn-danger" id="closeModalbtn" type="button">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class = "overlay"></div>
+                <div class="row justify-content-evenly"  id="library"></div>
             </div>
         </div>
     </div>
