@@ -1,0 +1,15 @@
+{
+  "name": "odin-project-library",
+  "version": "1.0.0",
+  "description": "for odin project library",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Odin-Project-Library"
+  },
+  "author": "Mon Tuazon",
+  "license": "ISC"
+}
